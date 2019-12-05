@@ -5,17 +5,17 @@
         type="hidden"
         name="authenticity_token"
         value="<%= form_authenticity_token %>">
-        <form action="<%= sessions_url%>" method="post">
+        <form action="<%= session_url%>" method="post">
             <label for="user_email">Email</label>
             <input type="text"
                 name="user[email]"
                 id="user_email"
-                value="<% @user.email %>"
+                
             >
             <input type="password"
                 name="user[password]"
                 id="user_password"
-                value="<% @user.password %>"
+                
             >
 
             <input type="submit">

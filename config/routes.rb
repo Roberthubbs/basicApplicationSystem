@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :jobs, only: [:new, :create, :show, :index] do    
     resources :job_applications, only: [:create, :new, :index]
   end    
-  resources :sessions, only: [:new, :reate, :destroy]
-  resource :users, only: [:new, :create, :show]
+  resource :session, only: [:new, :reate, :destroy]
+  resources :users, only: [:new, :create, :show]
 end

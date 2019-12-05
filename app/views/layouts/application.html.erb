@@ -10,6 +10,17 @@
   </head>
 
   <body>
+    <% if !current_user%>
+        <a href="<%= new_user_url%>">Sign Up</a>
+        <br />
+        <a href="<%= new_session_url%>">Sign In</a>
+    <% else %>
+        <form action="<%= session_url %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Logout">
+      </form>
+        <a href="<%= new_job_url%>">Post Job</a>
+    <% end %>
     <%= yield %>
   </body>
 </html>
