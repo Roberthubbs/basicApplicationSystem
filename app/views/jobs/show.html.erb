@@ -1,0 +1,26 @@
+<section>
+    <div>
+        <form action="<%= job_job_applications_url(job_id: @job.id) %>" method="post">
+            
+            <h2><%= @job.title %></h2>
+            <p><%= @job.description %><p>
+            <% my_bool = false%>
+             <% current_user.applied_jobs.each do |applied_job|%>
+                
+                <% if @job.id == applied_job.job_id%>
+                    <% my_bool = true%>
+                <% end %>
+            
+            <% end %>
+
+
+            <% if !my_bool %>
+                <input type="submit">Apply Now
+            <% else %>
+                <p>Already Applied</p>
+            <% end %>
+
+            <p><a href="<%= jobs_url %>" >Back to job page<a></p>
+         </form>
+    </div>
+</section>

@@ -1,0 +1,24 @@
+<section>
+    <a href="<%= new_job_url%>">Post Job</a>
+    
+    <h1>All Job Postings</h1>
+    <% Job.all.each do |job| %>
+        <div>
+        <h4><%= job.title %></h4>
+        <p><%=  job.description %></p>
+        <a href="<%= job_url(job)%>">Job</a>
+        </div>
+    <% end %>
+    <h1>Your Job Postings </h1>
+    <% current_user.posted_jobs.each do |posted|%>
+        <%= posted.as_json["title"] %>
+        <br />
+        <%= posted.as_json["description"] %>
+        <br />
+        <h4>Users Who Have Applied To this role</h4>
+        <% posted.applies.each do |apply| %>
+            <% user = User.find(apply[:user_id])%>
+            <%= user["email"]%>
+        <% end %>
+    <% end %>
+</section>

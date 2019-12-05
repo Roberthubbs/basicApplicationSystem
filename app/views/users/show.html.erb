@@ -1,0 +1,10 @@
+<section>
+<div>
+    <h1>Your Applications</h1>
+    <% @my_applied_jobs.each do |job| %>
+        <h3><%= job["title"] %></h3>
+        <%= job["description"] %>
+    <% end %> 
+    <p><a href="<%= jobs_url %>" >Back to job page<a></p>
+</div>
+</section>

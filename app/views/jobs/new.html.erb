@@ -1,0 +1,24 @@
+<section>
+    <div>
+        <h1>Post A Job</h1>
+        <form action="<%= jobs_url%>" method="post">
+            <label for="job_title">Job Title</label>
+            <input type="text"
+                name="job[title]"
+                id="job_title"
+                value="<% @job.title %>"
+            >
+            
+            <label for="job_description">Job Description</label>
+            
+            <input type="text"
+                name="job[description]"
+                id="job_description"
+                value="<% @job.description %>"
+                >
+            <br />
+            <input type="submit">
+        </form>
+        <a href="<%= jobs_url %>">Return To All Jobs</a>
+    </div>
+</section>
