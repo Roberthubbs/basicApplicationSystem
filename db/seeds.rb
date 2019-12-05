@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Job.destroy_all
-Application.destroy_all
+JobApplication.destroy_all
 
 guestUser = User.create!(email: "DemoUser", password: "Password")
 guestUser2 = User.create!(email: "lurePro22", password: "Password")
